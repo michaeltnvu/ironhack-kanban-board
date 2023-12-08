@@ -1,5 +1,19 @@
+import Footer from "./components/Footer";
+import List from "./kanban.json";
+import TaskContainer from "./components/TaskContainer";
+import {useState} from "react"
 function App() {
-  return <div className="App"></div>;
-}
+  const [toDoList, setToDoList] = useState(List);
+  const [inProgressList, setInProgressList] = useState([]);
+  const [completedList, setCompletedList] = useState([]);
 
-export default App;
+  return (
+    <div className="App">
+   
+      <TaskContainer title={"To-Do"} list={toDoList} />
+      <TaskContainer title={"In Progress"} list={inProgressList} />
+      <TaskContainer title={"Completed"} list={completedList} />
+      <Footer/>
+    </div>
+  );
+}
