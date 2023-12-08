@@ -1,19 +1,16 @@
-import Footer from "./components/Footer";
-import List from "./kanban.json";
-import TaskContainer from "./components/TaskContainer";
-import {useState} from "react"
-function App() {
-  const [toDoList, setToDoList] = useState(List);
-  const [inProgressList, setInProgressList] = useState([]);
-  const [completedList, setCompletedList] = useState([]);
+import { Route, Routes } from "react-router-dom";
+import About from "./pages/About";
+import HomePage from "./pages/HomePage";
 
+function App() {
   return (
     <div className="App">
-   
-      <TaskContainer title={"To-Do"} list={toDoList} />
-      <TaskContainer title={"In Progress"} list={inProgressList} />
-      <TaskContainer title={"Completed"} list={completedList} />
-      <Footer/>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
     </div>
   );
 }
+
+export default App;
