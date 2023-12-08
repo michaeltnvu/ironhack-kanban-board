@@ -17,6 +17,7 @@ const HomePage = () => {
         <TaskContainer title={"Completed"} list={completedList} />
       </div>
       <Footer />
+      
     </div>
   );
 };
