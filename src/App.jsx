@@ -2,6 +2,7 @@ import Footer from "./components/Footer";
 import List from "./kanban.json";
 import TaskContainer from "./components/TaskContainer";
 import {useState} from "react"
+import ListWithDeleteButton from "./components/ListWithDeleteButton";
 function App() {
   const [toDoList, setToDoList] = useState(List);
   const [inProgressList, setInProgressList] = useState([]);
