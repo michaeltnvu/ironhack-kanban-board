@@ -1,10 +1,8 @@
-
-
 const Footer = () => {
   return (
     <div>
-    <p>
-        Find us on{' '}
+      <p>
+        Find us on{" "}
         <a href="https://github.com/michaeltnvu/ironhack-kanban-board.git">
           GitHub
         </a>
@@ -19,9 +17,8 @@ const Footer = () => {
           </li>
         </ul>
       </nav>
-     </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Footer
-
+export default Footer;
