@@ -7,7 +7,7 @@ const Sidebar = () => {
       <nav>
         <ul className="nav-list">
           <li>
-            <NavLink to="/" className="nav-link">
+            <NavLink to="/create-task" className="nav-link">
               + Create a new task
             </NavLink>
           </li>
