@@ -10,6 +10,7 @@ const HomePage = () => {
   const [completedList, setCompletedList] = useState([]);
   return (
     <div className="home-page">
+      
       <Navbar />
       <div>
         <TaskContainer title={"To-Do"} list={toDoList} />
