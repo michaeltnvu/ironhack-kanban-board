@@ -47,8 +47,8 @@ const CreateTask = ({ addTask, tasks }) => {
             <div>
                 <label>Status:</label>
                 <select value={status} onChange={(e) => setStatus(e.target.value)}>
-                    <option value="To-Do">To Do</option>
-                    <option value="In-Progress">In Progress</option>
+                    <option value="To-Do">To-Do</option>
+                    <option value="In-Progress">In-Progress</option>
                     <option value="Completed">Completed</option>
                 </select>
             </div>
