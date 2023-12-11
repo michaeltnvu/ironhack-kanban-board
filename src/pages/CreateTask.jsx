@@ -11,7 +11,7 @@ const CreateTask = ({ addTask, tasks }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const newTask = {
-            id: (tasks.length + 1).toString(), // Assuming tasks is the current list of tasks
+            id: (tasks.length + 1).toString(), // changing comment to commit
             title,
             description,
             assignee,
