@@ -14,7 +14,7 @@ const TaskCard = ({ task, onDelete }) => {
         <h3>{task.title}</h3>
         <p>due by: {reformattedDate}</p>
       </div>
-      <Link to={"/" + task.id}>
+      <Link to={`/${task.id}`} state={task}>
         <button>Details</button>
       </Link>
       <button onClick={handleDelete}>Delete</button>
