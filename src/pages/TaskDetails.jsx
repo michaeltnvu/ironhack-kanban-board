@@ -1,4 +1,4 @@
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 
 const TaskDetails = () => {
   const { state } = useLocation();
@@ -18,6 +18,9 @@ const TaskDetails = () => {
       <p>Priority: {state.priority}</p>
       <p>Created on: {state.createdDate}</p>
       <p>Due by: {state.dueDate}</p>
+      <Link to={"/"}>
+        <button>Back</button>
+      </Link>
       <button onClick={() => navigate(`/${taskId}/edit`)}>Edit Task</button>
     </div>
   );
