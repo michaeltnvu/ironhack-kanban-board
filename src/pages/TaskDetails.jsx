@@ -1,27 +1,26 @@
-import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
-const TaskDetails = ({ tasks, deleteTask }) => {
-    const { id } = useParams();
-    const navigate = useNavigate();
-    const task = tasks.find(t => t.id === id);
+const TaskDetails = () => {
+  const { state } = useLocation();
+  const { taskId } = useParams();
+  const navigate = useNavigate();
 
-    if (!task) {
-        return <div>Task not found</div>; // direct to Santi's not found page, maybe?
-    }
+  if (!state) {
+    return <p>Task Not Found</p>;
+  }
 
-    return (
-        <div>
-            <h2>{task.title}</h2>
-            <p>{task.description}</p>
-            <p>{task.assignee}</p>
-            <p>{task.status}</p>
-            <p>{task.priority}</p>
-            <p>{task.createdDate}</p>
-            <p>{task.dueDate}</p>
-            <button onClick={() => navigate(`/${id}`)}>Edit Task</button>
-        </div>
-    );
+  return (
+    <div>
+      <h3>{state.title}</h3>
+      <p>{state.description}</p>
+      <p>Assigned to: {state.assignee}</p>
+      <p>Status: {state.status}</p>
+      <p>Priority: {state.priority}</p>
+      <p>Created on: {state.createdDate}</p>
+      <p>Due by: {state.dueDate}</p>
+      <button onClick={() => navigate(`/${taskId}/edit`)}>Edit Task</button>
+    </div>
+  );
 };
 
 export default TaskDetails;
