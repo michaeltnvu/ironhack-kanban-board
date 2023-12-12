@@ -10,21 +10,6 @@ const Sidebar = () => {
               + Create a new task
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/" className="nav-link">
-              To-Do
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/" className="nav-link">
-              In-Progress
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/" className="nav-link">
-              Completed
-            </NavLink>
-          </li>
         </ul>
       </nav>
     </div>
