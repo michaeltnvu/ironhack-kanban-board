@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 
-const EditTask = ({ updateTask, task }) => {
+const EditTask = ({ updateTask }) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [assignee, setAssignee] = useState('');
@@ -8,21 +9,25 @@ const EditTask = ({ updateTask, task }) => {
     const [priority, setPriority] = useState('');
     const [dueDate, setDueDate] = useState('');
 
+    const { taskId } = useParams();
+    const { state } = useLocation();
+    const navigate = useNavigate();
+
     useEffect(() => {
-        if (task) {
-            setTitle(task.title);
-            setDescription(task.description);
-            setAssignee(task.assignee);
-            setStatus(task.status);
-            setPriority(task.priority);
-            setDueDate(task.dueDate);
+        if (state) {
+            setTitle(state.title);
+            setDescription(state.description);
+            setAssignee(state.assignee);
+            setStatus(state.status);
+            setPriority(state.priority);
+            setDueDate(state.dueDate);
         }
-    }, [task]);
+    }, [state]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const updatedTask = {
-            ...task,
+            ...state,
             title,
             description,
             assignee,
@@ -31,6 +36,8 @@ const EditTask = ({ updateTask, task }) => {
             dueDate
         };
         updateTask(updatedTask);
+        navigate("/");
+
     };
 
     return (
@@ -50,8 +57,8 @@ const EditTask = ({ updateTask, task }) => {
             <div>
                 <label>Status:</label>
                 <select value={status} onChange={(e) => setStatus(e.target.value)}>
-                    <option value="To Do">To Do</option>
-                    <option value="In Progress">In Progress</option>
+                    <option value="To-Do">To Do</option>
+                    <option value="In-Progress">In Progress</option>
                     <option value="Completed">Completed</option>
                 </select>
             </div>

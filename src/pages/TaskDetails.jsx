@@ -21,7 +21,7 @@ const TaskDetails = () => {
       <Link to={"/"}>
         <button>Back</button>
       </Link>
-      <button onClick={() => navigate(`/${taskId}/edit`)}>Edit Task</button>
+      <button onClick={() => navigate(`/${taskId}/edit`, {state})}>Edit Task</button>
     </div>
   );
 };

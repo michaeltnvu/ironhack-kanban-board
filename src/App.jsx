@@ -27,6 +27,13 @@ function App() {
     console.log(`new task ${newTask}`)
   }
 
+  const updateTask = (updatedTask) => {
+    const updatedTasks = tasks.map((task) => 
+      task.id === updatedTask.id ? updatedTask : task
+    );
+    setTasks(updatedTasks);
+  };
+
   return (
     <div className="App">
       <Navbar />
@@ -36,7 +43,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/create-task" element={<CreateTask addTask={addTask} tasks={tasks} />} />
         <Route path="/:taskId" element={<TaskDetails />} />
-        <Route path="/:taskId/edit" element={<EditTask />} />
+        <Route path="/:taskId/edit" element={<EditTask updateTask={updateTask}/>} />
       </Routes>
       <Footer />
     </div>
