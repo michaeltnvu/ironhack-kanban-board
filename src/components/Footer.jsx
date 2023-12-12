@@ -1,19 +1,21 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div>
       <p>
-        Find us on{" "}
-        <a href="https://github.com/michaeltnvu/ironhack-kanban-board.git">
+        Find us on{' '}
+        <Link to="https://github.com/michaeltnvu/ironhack-kanban-board.git">
           GitHub
-        </a>
+        </Link>
       </p>
       <nav>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="/about">About</a>
+            <Link to="/about">About</Link>
           </li>
         </ul>
       </nav>
