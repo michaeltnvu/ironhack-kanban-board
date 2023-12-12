@@ -4,7 +4,7 @@ const CreateTask = ({ addTask, tasks }) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [assignee, setAssignee] = useState('');
-    const [status, setStatus] = useState('To Do');
+    const [status, setStatus] = useState('To-Do');
     const [priority, setPriority] = useState('Medium');
     const [dueDate, setDueDate] = useState('');
 
@@ -21,6 +21,7 @@ const CreateTask = ({ addTask, tasks }) => {
             dueDate
         };
         addTask(newTask); // Function to add the new task to the list
+        console.log(`task created ${newTask}`)
         // Reset form fields
         setTitle('');
         setDescription('');
