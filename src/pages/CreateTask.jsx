@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CreateTask = ({ addTask, tasks }) => {
     const [title, setTitle] = useState('');
@@ -8,6 +9,7 @@ const CreateTask = ({ addTask, tasks }) => {
     const [priority, setPriority] = useState('Medium');
     const [dueDate, setDueDate] = useState('');
 
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
         const newTask = {
@@ -22,6 +24,8 @@ const CreateTask = ({ addTask, tasks }) => {
         };
         addTask(newTask); // Function to add the new task to the list
         console.log(`task created ${newTask}`)
+
+        navigate('/');
         // Reset form fields
         setTitle('');
         setDescription('');
