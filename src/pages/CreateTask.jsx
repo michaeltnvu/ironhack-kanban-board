@@ -35,16 +35,8 @@ const CreateTask = ({ addTask, tasks }) => {
         setPriority('Medium');
         setDueDate('');
     };
-    addTask(newTask); // Function to add the new task to the list
-    console.log(`task created ${newTask}`);
-    // Reset form fields
-    setTitle("");
-    setDescription("");
-    setAssignee("");
-    setStatus("To Do");
-    setPriority("Medium");
-    setDueDate("");
-};
+    
+
 
 return (
     <form onSubmit={handleSubmit}>
@@ -101,6 +93,6 @@ return (
         <button type="submit">Add Task</button>
     </form>
 );
-;
+};
 
 export default CreateTask;
